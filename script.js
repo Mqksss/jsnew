@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', function() {
     var h1Texts = ["FiveM Stellar Client", "EFT Stellar Client"];
     var h2Texts = ["The best up to date FiveM external client.", "The best up to date EFT external client."];
@@ -5,10 +7,28 @@ document.addEventListener('DOMContentLoaded', function() {
     var h2Index = 0;
 
     document.getElementById('priceSelector').addEventListener('change', function() {
-        var selectedPrice = this.value;
+        var selectedLink = this.value;
+    
+        document.getElementById('buyNowLink').setAttribute('href', selectedLink);
+    
+        var priceText;
+        switch(selectedLink) {
+            case 'https://buy.stripe.com/28odS52es0XLgSc289':
+                priceText = '/ 10.50';
+                break;
+            case 'https://buy.stripe.com/3cseW93iw8qdatO28a':
+                priceText = '/ 25.50';
+                break;
+            case 'https://buy.stripe.com/5kA6pD06kbCp31m4gj':
+                priceText = '/ 40.50';
+                break;
+            default:
+                priceText = 'Select';
+        }
+    
         var priceElements = document.getElementsByClassName('price-fivem');
         for(var i = 0; i < priceElements.length; i++) {
-            priceElements[i].innerHTML = '<span>$</span>' + selectedPrice;
+            priceElements[i].innerHTML = '<span>$</span>' + priceText;
         }
     });
 
@@ -32,3 +52,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 2000); 
     }, 4000);
 });
+
+
+
+
+
+    // document.getElementById('priceSelector').addEventListener('change', function() {
+    //     var selectedPrice = this.value;
+    //     var priceElements = document.getElementsByClassName('price-fivem');
+    //     for(var i = 0; i < priceElements.length; i++) {
+    //         priceElements[i].innerHTML = '<span>$</span>' + selectedPrice;
+    //     }
+    // });
