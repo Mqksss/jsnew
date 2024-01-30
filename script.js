@@ -14,13 +14,13 @@ document.addEventListener('DOMContentLoaded', function() {
         var priceText;
         switch(selectedLink) {
             case 'https://buy.stripe.com/28odS52es0XLgSc289':
-                priceText = `/ 10.50`;
+                priceText = '10.50';
                 break;
             case 'https://buy.stripe.com/3cseW93iw8qdatO28a':
-                priceText = `/ 25.50`;
+                priceText = '25.50';
                 break;
             case 'https://buy.stripe.com/5kA6pD06kbCp31m4gj':
-                priceText = `/ 40.50`;
+                priceText = '40.50';
                 break;
             default:
                 priceText = 'Select';
